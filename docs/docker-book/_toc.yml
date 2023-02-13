@@ -1,0 +1,10 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+  - caption: "Introduccion a docker: Parte 1"
+    chapters:
+    - file: parte1/markdown
+    - file: parte1/markdown2.md
