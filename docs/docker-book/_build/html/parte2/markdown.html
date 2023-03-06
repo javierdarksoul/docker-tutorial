@@ -368,6 +368,41 @@ title="Print to PDF"
 <h2>¿Qué es docker compose?<a class="headerlink" href="#que-es-docker-compose" title="Permalink to this headline">#</a></h2>
 <p>Docker compose es una herramienta que permite la integración de múltiples contenedores docker de manera sencilla. Análogo a docker con el archivo Dockerfile, la definición de la orquestación con docker compose se realiza a través del archivo docker-compose.yml. Un ejemplo bastante común es el uso de docker compose para orquestar aplicaciones web, ya que, normalmente se tienen dos componentes dockerizables: front end y back end. Ambos componentes deben interactuar entre si a través de una API.</p>
 <p><img alt="" src="../_images/frontback.jpg" /></p>
+<p>Para buildear las imagenes de los servicios, utilizamos</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">compose</span> <span class="n">build</span>
+
+</pre></div>
+</div>
+<p>Para levantar servicios con docker compose, utilizamos</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">compose</span> <span class="n">up</span>
+
+</pre></div>
+</div>
+<p>Podemos utilizar build y up al mismo tiempo con</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">compose</span> <span class="n">up</span> <span class="o">--</span><span class="n">build</span>
+
+</pre></div>
+</div>
+<p>donde la definición y configuración de los servicios están en el archivo docker-compose.yml (ya veremos como escribir este tipo de archivos)</p>
+<p>Para dar de baja los servicios levantados, utilizamos</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">compose</span> <span class="n">down</span>
+
+</pre></div>
+</div>
+<p>Análogamente, si queremos reiniciar los servicios, lo indicamos con</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">compose</span> <span class="n">restart</span>
+</pre></div>
+</div>
+<p>Si queremos listar los servicios levantados por docker compose,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">compose</span> <span class="n">ps</span>
+
+</pre></div>
+</div>
+<p>EXTRA: con docker compose podemos escalar los servicios (volver aqui luego de ver la seccion de definicion de docker-compose.yml)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">compose</span> <span class="n">up</span> <span class="o">--</span><span class="n">scale</span> <span class="n">service</span><span class="o">=</span><span class="n">n</span>
+
+</pre></div>
+</div>
 </section>
 </section>
 

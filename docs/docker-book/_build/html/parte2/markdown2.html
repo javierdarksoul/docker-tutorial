@@ -326,8 +326,8 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="definiendo-un-archivo-yaml-de-docker-compose">
 <h1>Definiendo un archivo yaml de docker compose<a class="headerlink" href="#definiendo-un-archivo-yaml-de-docker-compose" title="Permalink to this headline">#</a></h1>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">version</span><span class="p">:</span> <span class="s1">&#39;3.8&#39;</span>  <span class="c1">#definicion de la version de docker compose</span>
-<span class="n">services</span><span class="p">:</span>       
+<p>Un archivo yml tiene la siguiente estructura</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">services</span><span class="p">:</span>       
   <span class="n">nombre_del_servicio</span><span class="p">:</span> <span class="c1">#definicion de servicio, cada aplicación docker debe definirse aqui</span>
     <span class="n">variable_de_configuracion</span><span class="p">:</span> <span class="c1">## configuraciones para cada aplicación</span>
       <span class="n">valores</span>
@@ -338,11 +338,72 @@ title="Print to PDF"
       <span class="n">valores</span>
 </pre></div>
 </div>
-<p>Veremos un ejemplo sencillo de un docker-compose.yml que utiliza una imagen de dockerhub</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">version</span><span class="p">:</span> <span class="s2">&quot;3.8&quot;</span>
-<span class="n">services</span><span class="p">:</span>
+<p>Veremos un ejemplo sencillo de un docker-compose.yml que utiliza una imagen de dockerhub postgres</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">services</span><span class="p">:</span>
   <span class="n">db</span><span class="p">:</span>
     <span class="n">image</span><span class="p">:</span> <span class="n">postgres</span>
+</pre></div>
+</div>
+<p>Si necesitamos una imagen personalizada, podemos usar un archivo Dockerfile junto con la opción build.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">services</span><span class="p">:</span>
+  <span class="n">my</span><span class="o">-</span><span class="n">service</span><span class="p">:</span>
+    <span class="n">build</span><span class="p">:</span> <span class="n">dockers</span><span class="o">-</span><span class="n">examples</span><span class="o">/</span><span class="n">numpy</span><span class="o">-</span><span class="n">test</span>
+</pre></div>
+</div>
+<p>Si queremos modificar el comando ejecutado por defecto por el contenedor , podemos usar la opcion command de docker compose</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">services</span><span class="p">:</span>
+  <span class="n">my</span><span class="o">-</span><span class="n">service</span><span class="p">:</span>
+    <span class="n">build</span><span class="p">:</span>  <span class="n">dockers</span><span class="o">-</span><span class="n">examples</span><span class="o">/</span><span class="n">numpy</span><span class="o">-</span><span class="n">test</span>
+    <span class="n">command</span><span class="p">:</span> <span class="n">echo</span> <span class="s2">&quot;hola mundo&quot;</span>
+</pre></div>
+</div>
+<p>Si alguno de nuestros servicios necesita utilizar un puerto, con la opcion port se puede hacer un mapeo HOST:CONTENEDOR(recordar bien el orden)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">services</span><span class="p">:</span>
+  <span class="n">my</span><span class="o">-</span><span class="n">service</span><span class="p">:</span>
+    <span class="n">build</span><span class="p">:</span>  <span class="n">dockers</span><span class="o">-</span><span class="n">examples</span><span class="o">/</span><span class="n">numpy</span><span class="o">-</span><span class="n">test</span>
+    <span class="n">command</span><span class="p">:</span> <span class="n">echo</span> <span class="s2">&quot;hola mundo&quot;</span>
+    <span class="n">ports</span><span class="p">:</span>
+    <span class="o">-</span> <span class="mi">6000</span><span class="p">:</span><span class="mi">6000</span>
+</pre></div>
+</div>
+<p>Si alguno de nuestros servicios depende de la ejecución de otro, podemos utilizar la opcion “depends_on: servicio”</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">services</span><span class="p">:</span>
+  <span class="n">my</span><span class="o">-</span><span class="n">service</span><span class="p">:</span>
+    <span class="n">build</span><span class="p">:</span>  <span class="n">dockers</span><span class="o">-</span><span class="n">examples</span><span class="o">/</span><span class="n">numpy</span><span class="o">-</span><span class="n">test</span>
+    <span class="n">command</span><span class="p">:</span> <span class="n">echo</span> <span class="s2">&quot;hola mundo&quot;</span>
+    <span class="n">ports</span><span class="p">:</span>
+    <span class="o">-</span> <span class="mi">6000</span><span class="p">:</span><span class="mi">6000</span>
+    <span class="n">depends_on</span><span class="p">:</span>
+      <span class="o">-</span> <span class="n">servicio_del_que_dependo</span>
+</pre></div>
+</div>
+<p>Si necesitamos definir variables de entorno, utilizamos la opcion “environment”</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">services</span><span class="p">:</span>
+  <span class="n">my</span><span class="o">-</span><span class="n">service</span><span class="p">:</span>
+    <span class="n">build</span><span class="p">:</span>  <span class="n">dockers</span><span class="o">-</span><span class="n">examples</span><span class="o">/</span><span class="n">numpy</span><span class="o">-</span><span class="n">test</span>
+    <span class="n">command</span><span class="p">:</span> <span class="n">echo</span> <span class="s2">&quot;hola mundo&quot;</span>
+    <span class="n">ports</span><span class="p">:</span>
+    <span class="o">-</span> <span class="mi">6000</span><span class="p">:</span><span class="mi">6000</span>
+    <span class="n">environment</span><span class="p">:</span>
+    <span class="o">-</span> <span class="n">VAR</span><span class="p">:</span> <span class="n">valor</span>
+</pre></div>
+</div>
+<p>En caso de que queramos configurar la red a la que los servicios se conectan, utilizaremos la opcion “network”</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">services</span><span class="p">:</span>
+  <span class="n">flask</span><span class="p">:</span>
+    <span class="n">build</span><span class="p">:</span>  <span class="n">dockers</span><span class="o">-</span><span class="n">examples</span><span class="o">/</span><span class="n">numpy</span><span class="o">-</span><span class="n">test</span>
+    <span class="n">command</span><span class="p">:</span> <span class="n">echo</span> <span class="s2">&quot;hola mundo&quot;</span>
+    <span class="n">ports</span><span class="p">:</span>
+    <span class="o">-</span> <span class="s2">&quot;6001:6001&quot;</span>
+    <span class="n">networks</span><span class="p">:</span>
+     <span class="n">network</span><span class="p">:</span> <span class="c1">#nombre de la red</span>
+      <span class="n">ipv4_address</span><span class="p">:</span> <span class="mf">192.168.0.10</span>  <span class="c1">#definimos ip estatica en caso de ser necesario</span>
+<span class="n">networks</span><span class="p">:</span>
+  <span class="n">network</span><span class="p">:</span>
+    <span class="n">ipam</span><span class="p">:</span>
+        <span class="n">config</span><span class="p">:</span>
+          <span class="o">-</span> <span class="n">subnet</span><span class="p">:</span> <span class="s2">&quot;192.168.0.0/24&quot;</span>
+            <span class="n">gateway</span><span class="p">:</span> <span class="mf">192.168.0.1</span>
 </pre></div>
 </div>
 </section>

@@ -6,21 +6,53 @@ Docker compose es una herramienta que permite la integración de múltiples cont
 
 ![](frontback.jpg "")
 
+Para buildear las imagenes de los servicios, utilizamos 
+
+``` 
+docker compose build
+
+``` 
+
 Para levantar servicios con docker compose, utilizamos 
 
-´´´
+``` 
 docker compose up
 
-´´´
+``` 
+Podemos utilizar build y up al mismo tiempo con
+
+``` 
+docker compose up --build
+
+``` 
 
 donde la definición y configuración de los servicios están en el archivo docker-compose.yml (ya veremos como escribir este tipo de archivos)
 
 Para dar de baja los servicios levantados, utilizamos
 
-´´´
+``` 
 docker compose down
 
-´´´
+```
+Análogamente, si queremos reiniciar los servicios, lo indicamos con 
+
+``` 
+docker compose restart
+``` 
+
+Si queremos listar los servicios levantados por docker compose,
+
+``` 
+docker compose ps
+
+``` 
+
+EXTRA: con docker compose podemos escalar los servicios (volver aqui luego de ver la seccion de definicion de docker-compose.yml)
+
+``` 
+docker compose up --scale service=n
+
+``` 
 
 
 

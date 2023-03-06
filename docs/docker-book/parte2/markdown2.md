@@ -1,5 +1,7 @@
 # Definiendo un archivo yaml de docker compose
 
+Un archivo yml tiene la siguiente estructura 
+
 
 ``` 
 services:       
