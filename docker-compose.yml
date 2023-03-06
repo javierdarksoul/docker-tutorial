@@ -11,9 +11,51 @@
 #    build:  dockers-examples/numpy-test
 #    command: echo "hola mundo"
 
-services:
-  flask:
-    build:  dockers-examples/flask/
-    command: python view.py
-    ports:
-    - "5000:5000"
+#services:
+#  flask:
+#    build:  dockers-examples/flask/
+#    command: python view.py
+
+
+#services:
+#  flask:
+#    build:  dockers-examples/flask/
+#    command: python view.py
+#    ports:
+#    - "6001:6001"
+
+#services:
+#  flask:
+#    build:  dockers-examples/flask/
+#    command: python view.py
+#    ports:
+#    - "6001-6004:6001"
+#  request:
+#    build: dockers-examples/request/
+#    command: wget 179.56.135.12:6001
+#    depends_on:
+#    - flask
+
+#services:
+#  flask:
+#    build:  dockers-examples/flask/
+#    command: python view.py
+#    ports:
+#    - "6001:6001"
+#    networks:
+#     network:
+#      ipv4_address: 192.168.0.10
+#  request:
+#    build: dockers-examples/request/
+#    command: wget 192.168.0.10:6001
+#    depends_on:
+#    - flask
+#    networks:
+#     network:
+#      ipv4_address: 192.168.0.11
+#networks:
+#  network:
+#    ipam:
+#        config:
+#          - subnet: "192.168.0.0/24"
+#            gateway: 192.168.0.1

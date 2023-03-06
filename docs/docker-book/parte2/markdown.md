@@ -6,6 +6,22 @@ Docker compose es una herramienta que permite la integración de múltiples cont
 
 ![](frontback.jpg "")
 
+Para levantar servicios con docker compose, utilizamos 
+
+´´´
+docker compose up
+
+´´´
+
+donde la definición y configuración de los servicios están en el archivo docker-compose.yml (ya veremos como escribir este tipo de archivos)
+
+Para dar de baja los servicios levantados, utilizamos
+
+´´´
+docker compose down
+
+´´´
+
 
 
 
