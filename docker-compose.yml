@@ -1,0 +1,19 @@
+#services:
+#  db:
+#    image: postgres
+
+#services:
+#  my-service:
+#    build: dockers-examples/numpy-test
+
+#services:
+#  my-service:
+#    build:  dockers-examples/numpy-test
+#    command: echo "hola mundo"
+
+services:
+  flask:
+    build:  dockers-examples/flask/
+    command: python view.py
+    ports:
+    - "5000:5000"

@@ -8,3 +8,7 @@ parts:
     chapters:
     - file: parte1/markdown
     - file: parte1/markdown2.md
+  - caption: "Introduccion a docker: Parte 2"
+    chapters:
+    - file: parte2/markdown
+    - file: parte2/markdown2.md
