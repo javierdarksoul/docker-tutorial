@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Primeros pasos con Docker: definicion, instalación y utilización &#8212; Introducción a Docker</title>
+    <title>Definiendo un archivo yaml de docker compose &#8212; Introducción a Docker</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Personalizando imágenes" href="markdown2.html" />
-    <link rel="prev" title="Bienvenido al tutorial de docker" href="../intro.html" />
+    <link rel="prev" title="Primeros pasos con Docker Compose" href="markdown.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -118,14 +117,14 @@ const thebe_selector_output = ".output, .cell_output"
   Introduccion a docker: Parte 1
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../parte1/markdown.html">
    Primeros pasos con Docker: definicion, instalación y utilización
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="markdown2.html">
+  <a class="reference internal" href="../parte1/markdown2.html">
    Personalizando imágenes
   </a>
  </li>
@@ -135,15 +134,15 @@ const thebe_selector_output = ".output, .cell_output"
   Introduccion a docker: Parte 2
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../parte2/markdown.html">
-   Primeros pasos con Docker: definicion, instalación y utilización
+  <a class="reference internal" href="markdown.html">
+   Primeros pasos con Docker Compose
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../parte2/markdown2.html">
-   Personalizando imágenes
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Definiendo un archivo yaml de docker compose
   </a>
  </li>
 </ul>
@@ -236,7 +235,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/javierdarksoul/docker-tutorial/issues/new?title=Issue%20on%20page%20%2Fparte1/markdown.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/javierdarksoul/docker-tutorial/issues/new?title=Issue%20on%20page%20%2Fparte2/markdown2.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -264,7 +263,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/parte1/markdown.md"
+        <a href="../_sources/parte2/markdown2.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -301,100 +300,23 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#que-es-docker">
-   ¿Qué es docker?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#diferencias-con-maquinas-virtuales">
-   Diferencias con maquinas virtuales
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#definiciones-basicas">
-   Definiciones básicas
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#quickstart">
-   Quickstart
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#comandos-basicos-de-docker">
-   Comandos básicos de docker
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Primeros pasos con Docker: definicion, instalación y utilización</h1>
+                <h1>Definiendo un archivo yaml de docker compose</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#que-es-docker">
-   ¿Qué es docker?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#diferencias-con-maquinas-virtuales">
-   Diferencias con maquinas virtuales
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#definiciones-basicas">
-   Definiciones básicas
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#quickstart">
-   Quickstart
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#comandos-basicos-de-docker">
-   Comandos básicos de docker
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -402,60 +324,88 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="primeros-pasos-con-docker-definicion-instalacion-y-utilizacion">
-<h1>Primeros pasos con Docker: definicion, instalación y utilización<a class="headerlink" href="#primeros-pasos-con-docker-definicion-instalacion-y-utilizacion" title="Permalink to this headline">#</a></h1>
-<section id="que-es-docker">
-<h2>¿Qué es docker?<a class="headerlink" href="#que-es-docker" title="Permalink to this headline">#</a></h2>
-<p>Docker es una herramienta que permite a los desarrolladores, administradores de sistemas, etc. implementar fácilmente sus aplicaciones en un espacio aislado (llamado contenedores) para ejecutarlas en el sistema operativo host, es decir, Linux.</p>
-</section>
-<section id="diferencias-con-maquinas-virtuales">
-<h2>Diferencias con maquinas virtuales<a class="headerlink" href="#diferencias-con-maquinas-virtuales" title="Permalink to this headline">#</a></h2>
-<p><img alt="" src="../_images/EN-docker-tutorial.png" /></p>
-<p>Para poder encapsular las aplicaciones con un hardware de virtualización clásico es necesario un elemento conocido como hipervisor, que funciona como una capa de abstracción entre el sistema anfitrión y los sistemas huéspedes virtuales. Cada sistema invitado emula a una máquina completa con un kernel de sistema operativo separado, al que el hipervisor asigna los componentes de hardware del host (CPU, memoria, espacio en disco duro y periféricos disponibles) de forma proporcional.</p>
-<p>Por el contrario, en la virtualización basada en contenedores no se crea un sistema huésped completo, sino que las aplicaciones se inician en contenedores que, aun compartiendo el mismo kernel, es decir, el del sistema anfitrión, se ejecutan como procesos aislados en el espacio de usuario.</p>
-</section>
-<section id="definiciones-basicas">
-<h2>Definiciones básicas<a class="headerlink" href="#definiciones-basicas" title="Permalink to this headline">#</a></h2>
-<p>Docker se compone de dos componentes principales</p>
-<p>Imagen: Corresponde a una plantilla de solo lectura que define su contenedor. La imagen contiene el código que se ejecutará, incluida cualquier definición para cualquier biblioteca o dependencia que el código necesite. Un contenedor de Docker es una imagen de Docker instanciada (en ejecución).</p>
-<p>Contenedor: Corresponde a una imagen de docker instanciada</p>
-</section>
-<section id="quickstart">
-<h2>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline">#</a></h2>
-<p>Para instalar docker en sistemas basados en linux</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo pacman -S docker
+  <section class="tex2jax_ignore mathjax_ignore" id="definiendo-un-archivo-yaml-de-docker-compose">
+<h1>Definiendo un archivo yaml de docker compose<a class="headerlink" href="#definiendo-un-archivo-yaml-de-docker-compose" title="Permalink to this headline">#</a></h1>
+<p>Un archivo yml tiene la siguiente estructura</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">services</span><span class="p">:</span>       
+  <span class="n">nombre_del_servicio</span><span class="p">:</span> <span class="c1">#definicion de servicio, cada aplicación docker debe definirse aqui</span>
+    <span class="n">variable_de_configuracion</span><span class="p">:</span> <span class="c1">## configuraciones para cada aplicación</span>
+      <span class="n">valores</span>
+    <span class="n">variable_de_configuracion</span><span class="p">:</span>
+      <span class="n">valores</span>
+  <span class="n">nombre_de_otro_servicio</span><span class="p">:</span>
+    <span class="n">variable_de_configuracion</span><span class="p">:</span>
+      <span class="n">valores</span>
 </pre></div>
 </div>
-<p>Para ubuntu</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo apt-get install ca-certificates curl gnupg lsb-release
-$ sudo mkdir -m 0755 -p /etc/apt/keyrings
-$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-
-$ echo &quot;deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable&quot; | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null
-
-$ sudo apt-get update
-$ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+<p>Veremos un ejemplo sencillo de un docker-compose.yml que utiliza una imagen de dockerhub postgres</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">services</span><span class="p">:</span>
+  <span class="n">db</span><span class="p">:</span>
+    <span class="n">image</span><span class="p">:</span> <span class="n">postgres</span>
 </pre></div>
 </div>
-<p>La instalacion en Windows / MacOS se debe realizar descargando la aplicación docker desktop desde [<a class="reference external" href="https://www.docker.com/products/docker-desktop/">https://www.docker.com/products/docker-desktop/</a>]</p>
-</section>
-<section id="comandos-basicos-de-docker">
-<h2>Comandos básicos de docker<a class="headerlink" href="#comandos-basicos-de-docker" title="Permalink to this headline">#</a></h2>
-<p>Para descargar una imagen existente en dockerhub, ejecutamos</p>
-<p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker</span> <span class="pre">pull</span> <span class="pre">[image_name:version]</span></code></p>
-<p>Para listar las imagenes pulleadas o buildeadas, ejecutamos</p>
-<p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker</span> <span class="pre">images</span></code></p>
-<p>Para instanciar una imagen en un contenedor y ejecutar un comando</p>
-<p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker</span> <span class="pre">run</span> <span class="pre">[image_name]</span> <span class="pre">[command]</span></code></p>
-<p>Para listar los contenedores</p>
-<p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker</span> <span class="pre">ps</span> <span class="pre">-a</span></code></p>
-<p>Para ejecutar una consola dentro del contenedor</p>
-<p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker</span> <span class="pre">run</span> <span class="pre">-it</span> <span class="pre">[image_name]</span> <span class="pre">bash</span></code></p>
-<p>Para eliminar una imagen</p>
-<p><code class="docutils literal notranslate"><span class="pre">$docker</span> <span class="pre">rmi</span> <span class="pre">[image_name]</span></code></p>
-<p>Para detener un contenedor en ejecución</p>
-<p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker</span> <span class="pre">stop</span> <span class="pre">[container_id]</span></code></p>
-</section>
+<p>Si necesitamos una imagen personalizada, podemos usar un archivo Dockerfile junto con la opción build.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">services</span><span class="p">:</span>
+  <span class="n">my</span><span class="o">-</span><span class="n">service</span><span class="p">:</span>
+    <span class="n">build</span><span class="p">:</span> <span class="n">dockers</span><span class="o">-</span><span class="n">examples</span><span class="o">/</span><span class="n">numpy</span><span class="o">-</span><span class="n">test</span>
+</pre></div>
+</div>
+<p>Si queremos modificar el comando ejecutado por defecto por el contenedor , podemos usar la opcion command de docker compose</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">services</span><span class="p">:</span>
+  <span class="n">my</span><span class="o">-</span><span class="n">service</span><span class="p">:</span>
+    <span class="n">build</span><span class="p">:</span>  <span class="n">dockers</span><span class="o">-</span><span class="n">examples</span><span class="o">/</span><span class="n">numpy</span><span class="o">-</span><span class="n">test</span>
+    <span class="n">command</span><span class="p">:</span> <span class="n">echo</span> <span class="s2">&quot;hola mundo&quot;</span>
+</pre></div>
+</div>
+<p>Si alguno de nuestros servicios necesita utilizar un puerto, con la opcion port se puede hacer un mapeo HOST:CONTENEDOR(recordar bien el orden)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">services</span><span class="p">:</span>
+  <span class="n">my</span><span class="o">-</span><span class="n">service</span><span class="p">:</span>
+    <span class="n">build</span><span class="p">:</span>  <span class="n">dockers</span><span class="o">-</span><span class="n">examples</span><span class="o">/</span><span class="n">numpy</span><span class="o">-</span><span class="n">test</span>
+    <span class="n">command</span><span class="p">:</span> <span class="n">echo</span> <span class="s2">&quot;hola mundo&quot;</span>
+    <span class="n">ports</span><span class="p">:</span>
+    <span class="o">-</span> <span class="mi">6000</span><span class="p">:</span><span class="mi">6000</span>
+</pre></div>
+</div>
+<p>Si alguno de nuestros servicios depende de la ejecución de otro, podemos utilizar la opcion “depends_on: servicio”</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">services</span><span class="p">:</span>
+  <span class="n">my</span><span class="o">-</span><span class="n">service</span><span class="p">:</span>
+    <span class="n">build</span><span class="p">:</span>  <span class="n">dockers</span><span class="o">-</span><span class="n">examples</span><span class="o">/</span><span class="n">numpy</span><span class="o">-</span><span class="n">test</span>
+    <span class="n">command</span><span class="p">:</span> <span class="n">echo</span> <span class="s2">&quot;hola mundo&quot;</span>
+    <span class="n">ports</span><span class="p">:</span>
+    <span class="o">-</span> <span class="mi">6000</span><span class="p">:</span><span class="mi">6000</span>
+    <span class="n">depends_on</span><span class="p">:</span>
+      <span class="o">-</span> <span class="n">servicio_del_que_dependo</span>
+</pre></div>
+</div>
+<p>Si necesitamos definir variables de entorno, utilizamos la opcion “environment”</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">services</span><span class="p">:</span>
+  <span class="n">my</span><span class="o">-</span><span class="n">service</span><span class="p">:</span>
+    <span class="n">build</span><span class="p">:</span>  <span class="n">dockers</span><span class="o">-</span><span class="n">examples</span><span class="o">/</span><span class="n">numpy</span><span class="o">-</span><span class="n">test</span>
+    <span class="n">command</span><span class="p">:</span> <span class="n">echo</span> <span class="s2">&quot;hola mundo&quot;</span>
+    <span class="n">ports</span><span class="p">:</span>
+    <span class="o">-</span> <span class="mi">6000</span><span class="p">:</span><span class="mi">6000</span>
+    <span class="n">environment</span><span class="p">:</span>
+    <span class="o">-</span> <span class="n">VAR</span><span class="p">:</span> <span class="n">valor</span>
+</pre></div>
+</div>
+<p>En caso de que queramos configurar la red a la que los servicios se conectan, utilizaremos la opcion “network”</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">services</span><span class="p">:</span>
+  <span class="n">flask</span><span class="p">:</span>
+    <span class="n">build</span><span class="p">:</span>  <span class="n">dockers</span><span class="o">-</span><span class="n">examples</span><span class="o">/</span><span class="n">numpy</span><span class="o">-</span><span class="n">test</span>
+    <span class="n">command</span><span class="p">:</span> <span class="n">echo</span> <span class="s2">&quot;hola mundo&quot;</span>
+    <span class="n">ports</span><span class="p">:</span>
+    <span class="o">-</span> <span class="s2">&quot;6001:6001&quot;</span>
+    <span class="n">networks</span><span class="p">:</span>
+     <span class="n">network</span><span class="p">:</span> <span class="c1">#nombre de la red</span>
+      <span class="n">ipv4_address</span><span class="p">:</span> <span class="mf">192.168.0.10</span>  <span class="c1">#definimos ip estatica en caso de ser necesario</span>
+<span class="n">networks</span><span class="p">:</span>
+  <span class="n">network</span><span class="p">:</span>
+    <span class="n">ipam</span><span class="p">:</span>
+        <span class="n">config</span><span class="p">:</span>
+          <span class="o">-</span> <span class="n">subnet</span><span class="p">:</span> <span class="s2">&quot;192.168.0.0/24&quot;</span>
+            <span class="n">gateway</span><span class="p">:</span> <span class="mf">192.168.0.1</span>
+</pre></div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -471,7 +421,7 @@ $ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugi
         },
         kernelOptions: {
             name: "python3",
-            path: "./parte1"
+            path: "./parte2"
         },
         predefinedOutput: true
     }
@@ -485,19 +435,12 @@ $ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugi
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../intro.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="markdown.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Bienvenido al tutorial de docker</p>
+            <p class="prev-next-title">Primeros pasos con Docker Compose</p>
         </div>
-    </a>
-    <a class='right-next' id="next-link" href="markdown2.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Personalizando imágenes</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>
